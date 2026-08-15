@@ -109,12 +109,12 @@ textarea {
 }
 
 .brand-mark {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, #0b234f, #1f5ed8);
-  border-radius: 14px;
+  background: linear-gradient(135deg, #0d2a60, #215fe0);
+  border-radius: 50%;
   color: white;
   box-shadow: var(--shadow);
   position: relative;
@@ -137,20 +137,13 @@ textarea {
 
 .brand-text {
   display: inline-flex;
-  align-items: baseline;
-  gap: 2px;
+  align-items: center;
   letter-spacing: -0.05em;
 }
 
 .brand-name {
-  font-size: 1.18rem;
+  font-size: 1.3rem;
   color: var(--primary-dark);
-}
-
-.brand-sub {
-  font-size: 1.02rem;
-  color: var(--primary);
-  font-weight: 800;
 }
 
 .main-nav {
