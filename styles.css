@@ -109,18 +109,48 @@ textarea {
 }
 
 .brand-mark {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, var(--primary), #3469d6);
-  border-radius: 12px;
+  background: linear-gradient(135deg, #0b234f, #1f5ed8);
+  border-radius: 14px;
   color: white;
   box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-mark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent 60%);
+}
+
+.brand-mark-inner {
+  position: relative;
+  z-index: 1;
+  font-size: 1.2rem;
+  letter-spacing: -0.08em;
 }
 
 .brand-text {
-  letter-spacing: -0.04em;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  letter-spacing: -0.05em;
+}
+
+.brand-name {
+  font-size: 1.18rem;
+  color: var(--primary-dark);
+}
+
+.brand-sub {
+  font-size: 1.02rem;
+  color: var(--primary);
+  font-weight: 800;
 }
 
 .main-nav {
