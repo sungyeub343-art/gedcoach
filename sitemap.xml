@@ -3,4 +3,10 @@
   <url>
     <loc>https://gedcoach.kr/</loc>
   </url>
+  <url>
+    <loc>https://gedcoach.kr/cities/</loc>
+  </url>
+  <url>
+    <loc>https://gedcoach.kr/cities/detail.html?region=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C&amp;district=%EA%B0%95%EB%82%A8%EA%B5%AC</loc>
+  </url>
 </urlset>
