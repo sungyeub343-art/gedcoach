@@ -307,15 +307,22 @@
             </p>
           </div>
 
-          <form class="consult-form" id="consultForm">
+          <form
+            class="consult-form"
+            id="consultForm"
+            action="https://formsubmit.co/ajax/sungyeub343@gmail.com"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="검정고시 무료 상담 신청" />
+            <input type="hidden" name="_captcha" value="true" />
             <div class="field-row two-col">
               <label>
                 <span>이름</span>
-                <input type="text" placeholder="학생 이름" required />
+                <input type="text" name="student_name" placeholder="학생 이름" required />
               </label>
               <label>
                 <span>학년</span>
-                <select required>
+                <select name="grade" required>
                   <option value="">선택</option>
                   <option>중학교 졸업</option>
                   <option>고등학교 졸업</option>
@@ -328,22 +335,22 @@
             <div class="field-row two-col">
               <label>
                 <span>과목</span>
-                <input type="text" placeholder="예: 국어, 수학, 영어" />
+                <input type="text" name="subjects" placeholder="예: 국어, 수학, 영어" />
               </label>
               <label>
                 <span>학부모 연락처</span>
-                <input type="tel" placeholder="010-0000-0000" required />
+                <input type="tel" name="parent_phone" placeholder="010-0000-0000" required />
               </label>
             </div>
 
             <label>
               <span>주소</span>
-              <input type="text" placeholder="예: 서울시 강남구 역삼동 123-45 / 동호수까지 기재" required />
+              <input type="text" name="address" placeholder="예: 서울시 강남구 역삼동 123-45 / 동호수까지 기재" required />
             </label>
 
             <label>
               <span>상담 내용</span>
-              <textarea rows="4" placeholder="현재 상황과 목표를 간단히 적어주세요." required></textarea>
+              <textarea name="consultation" rows="4" placeholder="현재 상황과 목표를 간단히 적어주세요." required></textarea>
             </label>
 
             <button type="submit" class="btn btn-primary submit-btn">무료 상담 신청하기</button>
