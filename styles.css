@@ -560,7 +560,18 @@ textarea {
 }
 
 .review-card {
-  padding: 30px 24px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.review-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.review-content {
+  padding: 26px 24px 30px;
 }
 
 .stars {
