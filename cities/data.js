@@ -18,6 +18,14 @@ const regionData = [
   { name: "제주특별자치도", districts: ["제주시", "서귀포시"] }
 ];
 
+const neighborhoodData = {
+  "서울특별시|종로구": [
+    "청운효자동", "사직동", "삼청동", "부암동", "평창동", "무악동", "교남동",
+    "가회동", "종로1·2·3·4가동", "종로5·6가동", "이화동", "혜화동", "창신1동",
+    "창신2동", "창신3동", "숭인1동", "숭인2동"
+  ]
+};
+
 function getRegion(regionName) {
   return regionData.find((region) => region.name === regionName);
 }
@@ -28,4 +36,12 @@ function getDistrictCount() {
 
 function createDistrictUrl(regionName, districtName) {
   return `detail.html?region=${encodeURIComponent(regionName)}&district=${encodeURIComponent(districtName)}`;
+}
+
+function getNeighborhoods(regionName, districtName) {
+  return neighborhoodData[`${regionName}|${districtName}`] || [];
+}
+
+function createNeighborhoodUrl(regionName, districtName, neighborhoodName) {
+  return `detail.html?region=${encodeURIComponent(regionName)}&district=${encodeURIComponent(districtName)}&dong=${encodeURIComponent(neighborhoodName)}`;
 }

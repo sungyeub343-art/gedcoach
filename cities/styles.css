@@ -46,6 +46,11 @@
 .district-list { display: flex; flex-wrap: wrap; gap: 8px; }
 .district-link { padding: 7px 10px; border: 1px solid var(--city-line); border-radius: 8px; color: var(--city-muted) !important; font-size: 0.88rem; }
 .district-link:hover { background: var(--city-sky); border-color: #a9c2f1; color: var(--city-blue-dark) !important; }
+.neighborhood-section { padding-top: 0; background: var(--city-bg); }
+.neighborhood-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.neighborhood-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 54px; padding: 0 16px; background: white; border: 1px solid var(--city-line); border-radius: 10px; color: var(--city-ink) !important; font-weight: 700; transition: transform .2s ease, border-color .2s ease, color .2s ease; }
+.neighborhood-link span:last-child { color: var(--city-blue); font-size: 1.2rem; }
+.neighborhood-link:hover { transform: translateY(-2px); border-color: #9bb8ef; color: var(--city-blue-dark) !important; }
 .city-search { width: min(430px, 100%); margin-left: auto; padding: 13px 16px; border: 1px solid var(--city-line); border-radius: 10px; background: white; color: var(--city-ink); }
 .city-search:focus { outline: 3px solid #dce8ff; border-color: var(--city-blue); }
 .reason-grid, .mode-grid, .grade-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
@@ -74,5 +79,5 @@
 .detail-point { padding: 22px; background: white; border: 1px solid var(--city-line); border-radius: 14px; }
 .detail-point strong { display: block; margin-bottom: 6px; }
 .detail-point span { color: var(--city-muted); font-size: .92rem; }
-@media (max-width: 820px) { .city-hero-grid, .region-grid, .reason-grid, .mode-grid, .grade-grid, .detail-points { grid-template-columns: 1fr; } .city-nav-links { display: none; } .city-section-heading, .city-cta-inner, .city-footer-inner { align-items: flex-start; flex-direction: column; } .city-search { margin-left: 0; } }
+@media (max-width: 820px) { .city-hero-grid, .region-grid, .reason-grid, .mode-grid, .grade-grid, .detail-points, .neighborhood-grid { grid-template-columns: 1fr; } .city-nav-links { display: none; } .city-section-heading, .city-cta-inner, .city-footer-inner { align-items: flex-start; flex-direction: column; } .city-search { margin-left: 0; } }
 @media (max-width: 520px) { .city-container { width: min(100% - 24px, 1160px); } .city-hero { padding: 64px 0 54px; } .city-section { padding: 58px 0; } .city-actions, .city-button { width: 100%; } }
