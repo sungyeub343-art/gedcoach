@@ -1,0 +1,30 @@
+:root {
+  --csat-ink: #17212b;
+  --csat-blue: #0d6b78;
+  --csat-blue-dark: #073b4c;
+  --csat-yellow: #f4b942;
+  --csat-mint: #e4f3ef;
+}
+
+.csat-page { background: #f7faf8; color: var(--csat-ink); }
+.csat-page .city-topbar { background: rgba(247, 250, 248, .94); }
+.csat-hero { padding: 94px 0 82px; background: radial-gradient(circle at 82% 12%, #cde8df 0, transparent 33%), linear-gradient(135deg, #f8fcfa 0%, #e5f1ed 100%); }
+.csat-hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: 60px; }
+.csat-kicker { color: var(--csat-blue); font-size: .78rem; font-weight: 900; letter-spacing: .12em; margin: 0 0 16px; }
+.csat-hero h1 { max-width: 760px; margin: 0; font-size: clamp(2.5rem, 5vw, 4.8rem); line-height: 1.08; letter-spacing: -.07em; }
+.csat-hero h1 span, .csat-detail-hero h1 span { color: var(--csat-blue); }
+.csat-lead { max-width: 680px; margin: 24px 0 0; color: #52636a; font-size: 1.1rem; line-height: 1.85; }
+.csat-score-card { min-height: 300px; padding: 34px; display: flex; flex-direction: column; justify-content: space-between; background: var(--csat-blue-dark); color: white; border-radius: 24px; box-shadow: 0 22px 48px rgba(7, 59, 76, .18); transform: rotate(2deg); }
+.csat-score-card span { color: #a8d9ce; font-weight: 800; }
+.csat-score-card strong { font-size: clamp(2.2rem, 5vw, 4.4rem); line-height: 1.05; letter-spacing: -.07em; }
+.csat-score-card p { margin: 0; color: rgba(255,255,255,.7); }
+.csat-primary { color: #16322f !important; background: var(--csat-yellow) !important; }
+.csat-secondary { color: var(--csat-blue-dark) !important; border: 1px solid rgba(7, 59, 76, .35); }
+.csat-hero .city-actions { margin-top: 30px; }
+.csat-card { background: white; border-color: #d9e9e4; }
+.csat-section-lead { margin: -12px 0 28px; color: #52636a; }
+.csat-cta { background: var(--csat-blue-dark); }
+.csat-detail-hero { background: linear-gradient(135deg, #f8fcfa, #e4f3ef); }
+.csat-detail-hero .detail-badge { background: #cce9df; color: var(--csat-blue-dark); }
+.csat-detail-hero p { color: #52636a; }
+@media (max-width: 820px) { .csat-hero-grid { grid-template-columns: 1fr; gap: 34px; } .csat-score-card { min-height: 230px; transform: none; } }
