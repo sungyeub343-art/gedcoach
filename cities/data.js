@@ -51,14 +51,45 @@ const neighborhoodData = {
 };
 
 const neighborhoodApartmentData = {
+  "서울특별시|종로구|청운효자동": ["청운현대아파트", "경복궁역 생활권"],
   "서울특별시|종로구|사직동": ["광화문풍림스페이스본", "경희궁의아침"],
+  "서울특별시|종로구|삼청동": ["삼청동 생활권", "북촌 생활권"],
+  "서울특별시|종로구|부암동": ["부암동 생활권", "신영동 생활권"],
+  "서울특별시|종로구|평창동": ["롯데캐슬 로잔", "평창동 삼성아파트"],
   "서울특별시|종로구|무악동": ["무악현대아파트", "인왕산아이파크"],
   "서울특별시|종로구|교남동": ["경희궁자이"],
+  "서울특별시|종로구|가회동": ["북촌 생활권", "가회동 생활권"],
+  "서울특별시|종로구|종로1·2·3·4가동": ["종로센트레빌", "종로 생활권"],
+  "서울특별시|종로구|종로5·6가동": ["종로5가 생활권", "동대문 생활권"],
+  "서울특별시|종로구|이화동": ["이화동 생활권", "대학로 생활권"],
+  "서울특별시|종로구|혜화동": ["혜화동 아남아파트", "대학로 생활권"],
   "서울특별시|종로구|창신1동": ["창신쌍용아파트"],
-  "서울특별시|종로구|숭인1동": ["종로센트레빌"]
+  "서울특별시|종로구|창신2동": ["창신쌍용아파트", "창신동 생활권"],
+  "서울특별시|종로구|창신3동": ["창신쌍용아파트", "숭인동 생활권"],
+  "서울특별시|종로구|숭인1동": ["종로센트레빌"],
+  "서울특별시|종로구|숭인2동": ["종로센트레빌", "숭인동 생활권"]
 };
 
 const neighborhoodEducationKeywords = ["검정고시 과외", "검정고시 학원", "검정고시 공부방", "검정고시 교습소"];
+
+const neighborhoodLearningData = {
+  "서울특별시|종로구|청운효자동": ["경복궁역 영어학원", "서촌 국어학원"],
+  "서울특별시|종로구|삼청동": ["북촌 영어학원", "안국역 학원가"],
+  "서울특별시|종로구|부암동": ["신영동 쥬빌리영어학원", "부암동 공부방"],
+  "서울특별시|종로구|평창동": ["평창동 영어학원", "구기동 수학학원"],
+  "서울특별시|종로구|무악동": ["독립문역 학원가", "홍제동 수학학원"],
+  "서울특별시|종로구|교남동": ["서대문역 영어학원", "경희궁 학원가"],
+  "서울특별시|종로구|가회동": ["안국역 영어학원", "북촌 공부방"],
+  "서울특별시|종로구|종로1·2·3·4가동": ["종로 영어학원", "종각역 학원가"],
+  "서울특별시|종로구|종로5·6가동": ["종로5가 학원가", "동대문 영어학원"],
+  "서울특별시|종로구|이화동": ["대학로 영어학원", "혜화역 학원가"],
+  "서울특별시|종로구|혜화동": ["대학로 국어학원", "혜화역 영어학원"],
+  "서울특별시|종로구|창신1동": ["동묘앞역 학원가", "창신동 공부방"],
+  "서울특별시|종로구|창신2동": ["창신동 영어학원", "동묘앞역 수학학원"],
+  "서울특별시|종로구|창신3동": ["숭인동 공부방", "신설동 학원가"],
+  "서울특별시|종로구|숭인1동": ["동묘앞역 영어학원", "숭인동 공부방"],
+  "서울특별시|종로구|숭인2동": ["신설동 수학학원", "숭인동 영어학원"]
+};
 
 function getRegion(regionName) {
   return regionData.find((region) => region.name === regionName);
@@ -78,6 +109,14 @@ function getNeighborhoods(regionName, districtName) {
 
 function getNeighborhoodApartments(regionName, districtName, neighborhoodName) {
   return neighborhoodApartmentData[`${regionName}|${districtName}|${neighborhoodName}`] || [];
+}
+
+function getNeighborhoodLearningKeywords(regionName, districtName, neighborhoodName) {
+  return neighborhoodLearningData[`${regionName}|${districtName}|${neighborhoodName}`] || [];
+}
+
+function createKakaoMapSearchUrl(keyword) {
+  return `https://map.kakao.com/?q=${encodeURIComponent(keyword)}`;
 }
 
 function getNeighborhoodKeywords(regionName, districtName, neighborhoodName) {

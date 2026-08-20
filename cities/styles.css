@@ -54,9 +54,11 @@
 .neighborhood-keyword-section { padding-top: 0; }
 .apartment-list, .keyword-list { display: flex; flex-wrap: wrap; gap: 10px; }
 .apartment-list { margin-bottom: 16px; }
+.keyword-heading { margin: 22px 0 10px; font-size: 1rem; }
 .apartment-tag, .keyword-tag { display: inline-flex; align-items: center; min-height: 38px; padding: 0 13px; border-radius: 8px; font-size: .9rem; }
 .apartment-tag { background: var(--city-blue-dark); color: white; font-weight: 800; }
 .keyword-tag { border: 1px solid var(--city-line); background: white; color: var(--city-muted); }
+.keyword-tag:hover { border-color: var(--city-blue); color: var(--city-blue-dark); }
 .keyword-empty { margin: 0 0 16px; color: var(--city-muted); }
 .city-search { width: min(430px, 100%); margin-left: auto; padding: 13px 16px; border: 1px solid var(--city-line); border-radius: 10px; background: white; color: var(--city-ink); }
 .city-search:focus { outline: 3px solid #dce8ff; border-color: var(--city-blue); }
