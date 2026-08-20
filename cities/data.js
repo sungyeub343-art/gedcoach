@@ -50,6 +50,16 @@ const neighborhoodData = {
   "서울특별시|강동구": ["강일동", "상일1동", "상일2동", "명일1동", "명일2동", "고덕1동", "고덕2동", "암사1동", "암사2동", "암사3동", "천호1동", "천호2동", "천호3동", "성내1동", "성내2동", "성내3동", "길동", "둔촌1동", "둔촌2동"]
 };
 
+const neighborhoodApartmentData = {
+  "서울특별시|종로구|사직동": ["광화문풍림스페이스본", "경희궁의아침"],
+  "서울특별시|종로구|무악동": ["무악현대아파트", "인왕산아이파크"],
+  "서울특별시|종로구|교남동": ["경희궁자이"],
+  "서울특별시|종로구|창신1동": ["창신쌍용아파트"],
+  "서울특별시|종로구|숭인1동": ["종로센트레빌"]
+};
+
+const neighborhoodEducationKeywords = ["검정고시 과외", "검정고시 학원", "검정고시 공부방", "검정고시 교습소"];
+
 function getRegion(regionName) {
   return regionData.find((region) => region.name === regionName);
 }
@@ -64,6 +74,17 @@ function createDistrictUrl(regionName, districtName) {
 
 function getNeighborhoods(regionName, districtName) {
   return neighborhoodData[`${regionName}|${districtName}`] || [];
+}
+
+function getNeighborhoodApartments(regionName, districtName, neighborhoodName) {
+  return neighborhoodApartmentData[`${regionName}|${districtName}|${neighborhoodName}`] || [];
+}
+
+function getNeighborhoodKeywords(regionName, districtName, neighborhoodName) {
+  const apartments = getNeighborhoodApartments(regionName, districtName, neighborhoodName);
+  const area = `${districtName} ${neighborhoodName}`;
+  const targets = apartments.length ? apartments : [area];
+  return [...new Set(targets.flatMap((target) => neighborhoodEducationKeywords.map((keyword) => `${target} 인근 ${keyword}`)))];
 }
 
 function createNeighborhoodUrl(regionName, districtName, neighborhoodName) {

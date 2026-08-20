@@ -51,6 +51,13 @@
 .neighborhood-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 54px; padding: 0 16px; background: white; border: 1px solid var(--city-line); border-radius: 10px; color: var(--city-ink) !important; font-weight: 700; transition: transform .2s ease, border-color .2s ease, color .2s ease; }
 .neighborhood-link span:last-child { color: var(--city-blue); font-size: 1.2rem; }
 .neighborhood-link:hover { transform: translateY(-2px); border-color: #9bb8ef; color: var(--city-blue-dark) !important; }
+.neighborhood-keyword-section { padding-top: 0; }
+.apartment-list, .keyword-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.apartment-list { margin-bottom: 16px; }
+.apartment-tag, .keyword-tag { display: inline-flex; align-items: center; min-height: 38px; padding: 0 13px; border-radius: 8px; font-size: .9rem; }
+.apartment-tag { background: var(--city-blue-dark); color: white; font-weight: 800; }
+.keyword-tag { border: 1px solid var(--city-line); background: white; color: var(--city-muted); }
+.keyword-empty { margin: 0 0 16px; color: var(--city-muted); }
 .city-search { width: min(430px, 100%); margin-left: auto; padding: 13px 16px; border: 1px solid var(--city-line); border-radius: 10px; background: white; color: var(--city-ink); }
 .city-search:focus { outline: 3px solid #dce8ff; border-color: var(--city-blue); }
 .reason-grid, .mode-grid, .grade-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
