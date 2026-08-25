@@ -222,6 +222,31 @@ textarea {
   gap: 18px;
 }
 
+.menu-toggle,
+.mobile-menu-cta {
+  display: none;
+}
+
+.menu-toggle {
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: 1px solid rgba(20, 61, 139, 0.14);
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 4px 0;
+  border-radius: 2px;
+  background: var(--primary-dark);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
 .contact-pill {
   display: flex;
   align-items: center;
@@ -814,8 +839,74 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 
+  .nav-wrap {
+    position: relative;
+  }
+
   .main-nav {
-    display: none;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    display: grid;
+    gap: 0;
+    padding: 10px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 18px 36px rgba(20, 61, 139, 0.14);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  }
+
+  .topbar.menu-open .main-nav {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .main-nav > a,
+  .main-nav .nav-dropdown-toggle {
+    width: 100%;
+    padding: 13px 12px;
+  }
+
+  .nav-dropdown {
+    display: block;
+    height: auto;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    display: grid;
+    margin: 0 8px 8px;
+    padding: 0 0 0 12px;
+    border: 0;
+    border-left: 2px solid var(--line);
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
+
+  .menu-toggle,
+  .mobile-menu-cta {
+    display: block;
+  }
+
+  .topbar.menu-open .menu-toggle span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .topbar.menu-open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .topbar.menu-open .menu-toggle span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
   }
 
   .nav-actions {
@@ -858,8 +949,12 @@ textarea:focus {
 }
 
 @media (max-width: 560px) {
+  .nav-wrap {
+    min-height: 66px;
+  }
+
   .nav-actions {
-    width: 100%;
+    display: none;
   }
 
   .contact-pill {
