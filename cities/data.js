@@ -160,7 +160,11 @@ function createDistrictUrl(regionName, districtName) {
 }
 
 function getNeighborhoods(regionName, districtName) {
-  return neighborhoodData[`${regionName}|${districtName}`] || [];
+  return nationwideNeighborhoodData[`${regionName}|${districtName}`] || neighborhoodData[`${regionName}|${districtName}`] || [];
+}
+
+function getNeighborhoodCount() {
+  return Object.values(nationwideNeighborhoodData).reduce((total, neighborhoods) => total + neighborhoods.length, 0);
 }
 
 function getNeighborhoodApartments(regionName, districtName, neighborhoodName) {

@@ -6,7 +6,10 @@ function renderRegions(keyword = '') {
   const normalizedKeyword = keyword.trim().toLowerCase();
   const filteredRegions = regionData.map((region) => ({
     ...region,
-    districts: region.districts.filter((district) => `${region.name} ${district}`.toLowerCase().includes(normalizedKeyword))
+    districts: region.districts.filter((district) => {
+      const neighborhoods = getNeighborhoods(region.name, district).join(' ');
+      return `${region.name} ${district} ${neighborhoods}`.toLowerCase().includes(normalizedKeyword);
+    })
   })).filter((region) => region.name.toLowerCase().includes(normalizedKeyword) || region.districts.length);
 
   regionGrid.innerHTML = filteredRegions.length ? filteredRegions.map((region) => `
@@ -19,6 +22,6 @@ function renderRegions(keyword = '') {
   `).join('') : '<p>검색한 지역의 안내가 준비 중입니다. 무료 상담으로 문의해주세요.</p>';
 }
 
-districtCount.textContent = `${getDistrictCount()}개`;
+districtCount.textContent = `${getNeighborhoodCount().toLocaleString('ko-KR')}개`;
 renderRegions();
 regionSearch.addEventListener('input', (event) => renderRegions(event.target.value));
