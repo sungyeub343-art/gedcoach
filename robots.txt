@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gedcoach.kr/sitemap.xml
