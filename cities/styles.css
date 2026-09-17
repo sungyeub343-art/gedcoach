@@ -20,7 +20,7 @@
 .city-container { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
 .city-topbar { background: rgba(247, 249, 252, 0.92); border-bottom: 1px solid var(--city-line); position: sticky; top: 0; z-index: 5; backdrop-filter: blur(12px); }
 .city-nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.city-brand { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 1.1rem; }
+.city-brand { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 1.05rem; white-space: nowrap; }
 .city-brand-mark { width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; color: white; background: var(--city-blue-dark); }
 .city-nav-links { display: flex; align-items: center; gap: 24px; color: var(--city-muted); font-size: 0.94rem; font-weight: 700; }
 .city-nav-links a:hover { color: var(--city-blue); }

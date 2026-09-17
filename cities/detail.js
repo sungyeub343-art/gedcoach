@@ -10,7 +10,7 @@ const neighborhoodKeywords = neighborhoodName ? getNeighborhoodKeywords(regionNa
 const detailContent = document.getElementById('detailContent');
 
 function renderNotFound() {
-  document.title = '지역 안내를 찾을 수 없습니다 | GED Coach';
+  document.title = '지역 안내를 찾을 수 없습니다 | 상상코칭 검정고시';
   document.getElementById('pageRobots').content = 'noindex, follow';
   detailContent.innerHTML = `<section class="detail-hero"><div class="city-container"><p class="detail-badge">지역 안내</p><h1>지역 정보를 찾을 수 없습니다.</h1><p>전체 지역 안내에서 원하는 시군구를 다시 선택하거나, 무료 상담으로 문의해주세요.</p><div class="city-actions"><a class="city-button primary" href="./">전체 지역 보기</a><a class="city-button secondary" href="../#contact">무료 상담 신청</a></div></div></section>`;
 }
@@ -28,7 +28,7 @@ if (!region || !region.districts.includes(districtName) || (neighborhoodName && 
   const canonicalUrl = `https://gedcoach.kr/cities/detail.html?${canonicalParams.toString()}`;
   const localKeywords = neighborhoodKeywords.length ? ` ${neighborhoodKeywords.slice(0, 4).join(', ')}.` : '.';
   const description = `${title}${localKeywords} 국어, 수학, 영어 등 전 과목 방문·화상 수업 상담을 제공합니다.`;
-  document.title = `${title} 검정고시 과외 | GED Coach`;
+  document.title = `${title} 검정고시 과외 | 상상코칭 검정고시`;
   document.getElementById('pageDescription').content = description;
   document.getElementById('pageCanonical').href = canonicalUrl;
   document.getElementById('pageOgTitle').content = document.title;

@@ -145,11 +145,11 @@ textarea {
 .brand-text {
   display: inline-flex;
   align-items: center;
-  letter-spacing: -0.05em;
+  white-space: nowrap;
 }
 
 .brand-name {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--primary-dark);
 }
 
