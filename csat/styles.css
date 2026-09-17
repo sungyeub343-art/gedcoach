@@ -23,6 +23,7 @@
 .csat-hero .city-actions { margin-top: 30px; }
 .csat-card { background: white; border-color: #d9e9e4; }
 .csat-section-lead { margin: -12px 0 28px; color: #52636a; }
+.csat-related-actions { margin-top: 28px; }
 .csat-cta { background: var(--csat-blue-dark); }
 .csat-detail-hero { background: linear-gradient(135deg, #f8fcfa, #e4f3ef); }
 .csat-detail-hero .detail-badge { background: #cce9df; color: var(--csat-blue-dark); }

@@ -23,9 +23,11 @@
 .record-hero .city-actions { margin-top: 30px; }
 .record-card { background: white; border-color: #dfe8d9; }
 .record-section-lead { margin: -12px 0 28px; color: #5c645a; }
+.record-detail-points { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.record-guide-section { padding: 0; background: transparent; }
 .record-related-actions { margin-top: 28px; }
 .record-cta { background: var(--record-green-dark); }
 .record-detail-hero { background: linear-gradient(135deg, #fffdf7, var(--record-leaf)); }
 .record-detail-hero .detail-badge { background: #dceacb; color: var(--record-green-dark); }
 .record-detail-hero p { color: #5c645a; }
-@media (max-width: 820px) { .record-hero-grid { grid-template-columns: 1fr; gap: 34px; } .record-plan-card { min-height: 230px; transform: none; } }
+@media (max-width: 820px) { .record-hero-grid, .record-detail-points { grid-template-columns: 1fr; gap: 34px; } .record-plan-card { min-height: 230px; transform: none; } }
