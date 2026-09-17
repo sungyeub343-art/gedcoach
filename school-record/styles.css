@@ -23,6 +23,7 @@
 .record-hero .city-actions { margin-top: 30px; }
 .record-card { background: white; border-color: #dfe8d9; }
 .record-section-lead { margin: -12px 0 28px; color: #5c645a; }
+.record-related-actions { margin-top: 28px; }
 .record-cta { background: var(--record-green-dark); }
 .record-detail-hero { background: linear-gradient(135deg, #fffdf7, var(--record-leaf)); }
 .record-detail-hero .detail-badge { background: #dceacb; color: var(--record-green-dark); }
