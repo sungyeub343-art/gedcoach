@@ -9,7 +9,10 @@ function renderRegions(keyword = '') {
   const normalizedKeyword = keyword.trim().toLowerCase();
   const filteredRegions = regionData.map((region) => ({
     ...region,
-    districts: region.districts.filter((district) => `${region.name} ${district}`.toLowerCase().includes(normalizedKeyword))
+    districts: region.districts.filter((district) => {
+      const neighborhoods = getNeighborhoods(region.name, district).join(' ');
+      return `${region.name} ${district} ${neighborhoods}`.toLowerCase().includes(normalizedKeyword);
+    })
   })).filter((region) => region.name.toLowerCase().includes(normalizedKeyword) || region.districts.length);
 
   regionGrid.innerHTML = filteredRegions.length ? filteredRegions.map((region) => `

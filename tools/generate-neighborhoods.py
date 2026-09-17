@@ -95,6 +95,9 @@ def main():
         for district in districts:
             query = urlencode({"region": region, "district": district})
             urls.append(f"{SITE_URL}/csat/detail.html?{query}")
+            for neighborhood in neighborhoods[f"{region}|{district}"]:
+                query = urlencode({"region": region, "district": district, "dong": neighborhood})
+                urls.append(f"{SITE_URL}/csat/detail.html?{query}")
     sitemap_lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
