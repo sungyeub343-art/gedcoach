@@ -7,7 +7,7 @@ const neighborhoods = getNeighborhoods(regionName, districtName);
 const detailContent = document.getElementById('detailContent');
 
 function renderNotFound() {
-  document.title = '내신 대비 과외 지역 안내를 찾을 수 없습니다 | 상상코칭';
+  document.title = '내신 대비 과외 지역 안내를 찾을 수 없습니다 | 검정고시';
   document.getElementById('pageRobots').content = 'noindex, follow';
   detailContent.innerHTML = `<section class="detail-hero record-detail-hero"><div class="city-container"><p class="detail-badge">내신 대비 과외</p><h1>지역 정보를 찾을 수 없습니다.</h1><p>전체 지역에서 원하는 시군구를 다시 선택하거나, 무료 상담으로 내신 과외를 문의해주세요.</p><div class="city-actions"><a class="city-button record-primary" href="./">전체 지역 보기</a><a class="city-button record-secondary" href="../#contact">무료 상담 신청</a></div></div></section>`;
 }
@@ -21,7 +21,7 @@ if (!region || !region.districts.includes(districtName) || (neighborhoodName && 
   if (neighborhoodName) canonicalParams.set('dong', neighborhoodName);
   const canonicalUrl = `https://gedcoach.kr/school-record/detail.html?${canonicalParams.toString()}`;
   const description = `${title} 중학생 고등학생 내신 대비 과외와 검정고시 학습 안내. 국어 영어 수학 사회 과학의 기초부터 학교별 시험 범위, 서술형, 수행평가까지 맞춤 관리합니다.`;
-  document.title = `${title} 내신 대비 과외 · 중고등 과외 | 상상코칭`;
+  document.title = `${title} 내신 대비 과외 · 중고등 과외 | 검정고시`;
   document.getElementById('pageDescription').content = description;
   document.getElementById('pageCanonical').href = canonicalUrl;
   document.getElementById('pageOgTitle').content = document.title;

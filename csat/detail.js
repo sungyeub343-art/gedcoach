@@ -7,7 +7,7 @@ const neighborhoods = getNeighborhoods(regionName, districtName);
 const detailContent = document.getElementById('detailContent');
 
 function renderNotFound() {
-  document.title = '수능 과외 지역 안내를 찾을 수 없습니다 | 상상코칭 검정고시';
+  document.title = '수능 과외 지역 안내를 찾을 수 없습니다 | 검정고시';
   document.getElementById('pageRobots').content = 'noindex, follow';
   detailContent.innerHTML = `<section class="detail-hero csat-detail-hero"><div class="city-container"><p class="detail-badge">정시 대비 과외</p><h1>지역 정보를 찾을 수 없습니다.</h1><p>전체 지역에서 원하는 시군구를 다시 선택하거나, 무료 상담으로 수능 과외를 문의해주세요.</p><div class="city-actions"><a class="city-button csat-primary" href="./">전체 지역 보기</a><a class="city-button csat-secondary" href="../#contact">무료 상담 신청</a></div></div></section>`;
 }
@@ -21,7 +21,7 @@ if (!region || !region.districts.includes(districtName) || (neighborhoodName && 
   if (neighborhoodName) canonicalParams.set('dong', neighborhoodName);
   const canonicalUrl = `https://gedcoach.kr/csat/detail.html?${canonicalParams.toString()}`;
   const description = `${title} 검정고시 합격 이후 대학 진학을 위한 수능 과외 및 정시 대비 안내. 국어 영어 수학 탐구의 고등 개념, 기출, 모의고사를 목표 대학에 맞춰 관리합니다.`;
-  document.title = `${title} 수능 과외 · 정시 대비 과외 | 상상코칭 검정고시`;
+  document.title = `${title} 수능 과외 · 정시 대비 과외 | 검정고시`;
   document.getElementById('pageDescription').content = description;
   document.getElementById('pageCanonical').href = canonicalUrl;
   document.getElementById('pageOgTitle').content = document.title;
