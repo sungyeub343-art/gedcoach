@@ -62,6 +62,13 @@
 .apartment-tag { background: var(--city-blue-dark); color: white; font-weight: 800; }
 .keyword-tag { border: 1px solid var(--city-line); background: white; color: var(--city-muted); }
 .keyword-tag:hover { border-color: var(--city-blue); color: var(--city-blue-dark); }
+.local-keyword-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 30px; padding: 0; list-style: none; }
+.local-keyword-list li { display: inline-flex; align-items: center; min-height: 38px; padding: 0 13px; border: 1px solid var(--city-line); border-radius: 8px; background: white; color: var(--city-muted); font-size: .9rem; }
+.local-service-links { margin-top: 14px; }
+.local-faq-list { display: grid; gap: 12px; }
+.local-faq-item { border: 1px solid var(--city-line); border-radius: 12px; background: white; }
+.local-faq-item summary { padding: 18px 20px; font-weight: 800; cursor: pointer; }
+.local-faq-item p { margin: 0; padding: 0 20px 18px; color: var(--city-muted); line-height: 1.75; }
 .keyword-empty { margin: 0 0 16px; color: var(--city-muted); }
 .city-search { width: min(430px, 100%); margin-left: auto; padding: 13px 16px; border: 1px solid var(--city-line); border-radius: 10px; background: white; color: var(--city-ink); }
 .city-search:focus { outline: 3px solid #dce8ff; border-color: var(--city-blue); }

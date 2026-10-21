@@ -17,11 +17,9 @@ if (!region || !region.districts.includes(districtName) || (neighborhoodName && 
 } else {
   const title = neighborhoodName ? `${regionName} ${districtName} ${neighborhoodName}` : `${regionName} ${districtName}`;
   const areaLabel = neighborhoodName || districtName;
-  const canonicalParams = new URLSearchParams({ region: regionName, district: districtName });
-  if (neighborhoodName) canonicalParams.set('dong', neighborhoodName);
-  const canonicalUrl = `https://gedcoach.kr/school-record/detail.html?${canonicalParams.toString()}`;
-  const description = `${title} 중학생 고등학생 내신 대비 과외와 검정고시 학습 안내. 국어 영어 수학 사회 과학의 기초부터 학교별 시험 범위, 서술형, 수행평가까지 맞춤 관리합니다.`;
-  document.title = `${title} 내신 대비 과외 · 중고등 과외 | 검정고시`;
+  const canonicalUrl = createLocalPageUrl('school-record', regionName, districtName, neighborhoodName);
+  const description = `${title} 중학생·고등학생 내신 과외. 학교별 시험 범위에 맞춰 국어·영어·수학·사회·과학과 서술형·수행평가까지 1:1 방문·화상 수업으로 관리합니다. 무료 상담 010-2928-3614`;
+  document.title = `${getLocalSearchLabel(regionName, districtName, neighborhoodName)} 내신 과외 | 중고등 국영수 1:1 방문·화상`;
   document.getElementById('pageDescription').content = description;
   document.getElementById('pageCanonical').href = canonicalUrl;
   document.getElementById('pageOgTitle').content = document.title;
@@ -35,4 +33,7 @@ if (!region || !region.districts.includes(districtName) || (neighborhoodName && 
     <section class="city-section alt"><div class="city-container"><div class="city-section-heading"><div><p class="record-kicker">EXAM FOCUS</p><h2>학교 시험에 필요한 준비를 연결합니다</h2></div></div><div class="mode-grid"><article class="mode-card"><h3>국어 · 영어</h3><p>교과서 본문과 학교별 부교재를 중심으로 암기, 문법, 독해, 서술형 답안까지 반복해 준비합니다.</p></article><article class="mode-card"><h3>수학</h3><p>개념과 대표 유형을 정확히 익힌 뒤 학교 프린트, 기출 경향, 고난도 변형 문제로 확장합니다.</p></article><article class="mode-card"><h3>사회 · 과학</h3><p>핵심 개념과 자료 해석을 연결하고 빈칸 점검, 예상 문제, 서술형 표현을 통해 완성도를 높입니다.</p></article></div></div></section>
     <section class="city-cta record-cta"><div class="city-container city-cta-inner"><div><h2>${areaLabel} 내신 과외, 다음 시험부터 달라지게</h2><p>학년, 학교, 최근 성적과 필요한 과목을 알려주시면 내신 대비 방향을 안내드립니다.</p></div><div class="city-actions"><a class="city-button record-primary" href="../#contact">무료 상담 신청</a><a class="city-button record-secondary" href="${neighborhoodName ? createDistrictUrl(regionName, districtName) : './'}">${neighborhoodName ? `${districtName} 안내 보기` : '전체 지역 보기'}</a></div></div></section>
     ${!neighborhoodName && neighborhoods.length ? `<section class="city-section neighborhood-section"><div class="city-container"><div class="city-section-heading"><div><p class="record-kicker">LOCAL AREA</p><h2>${districtName} 동·읍·면별 내신 대비 과외</h2></div><p>거주하는 세부 지역을 선택하면 맞춤 내신 과외 페이지로 이동합니다.</p></div><div class="neighborhood-grid">${neighborhoods.map((neighborhood) => `<a class="neighborhood-link" href="${createNeighborhoodUrl(regionName, districtName, neighborhood)}"><span>${neighborhood} 내신 과외</span><span aria-hidden="true">→</span></a>`).join('')}</div></div></section>` : ''}`;
+  const localSeo = renderLocalSeo('school-record', regionName, districtName, neighborhoodName);
+  detailContent.innerHTML += localSeo.html;
+  document.getElementById('pageJsonLd').textContent = localSeo.jsonLd;
 }

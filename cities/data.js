@@ -155,8 +155,13 @@ function getDistrictCount() {
   return regionData.reduce((total, region) => total + region.districts.length, 0);
 }
 
+function toPathSegment(name) {
+  return encodeURIComponent(name.replace(/\s+/g, '-'));
+}
+
+// Relative to a service root (/cities/, /csat/, /school-record/).
 function createDistrictUrl(regionName, districtName) {
-  return `detail.html?region=${encodeURIComponent(regionName)}&district=${encodeURIComponent(districtName)}`;
+  return `${toPathSegment(regionName)}/${toPathSegment(districtName)}/`;
 }
 
 function getNeighborhoods(regionName, districtName) {
@@ -187,5 +192,5 @@ function getNeighborhoodKeywords(regionName, districtName, neighborhoodName) {
 }
 
 function createNeighborhoodUrl(regionName, districtName, neighborhoodName) {
-  return `detail.html?region=${encodeURIComponent(regionName)}&district=${encodeURIComponent(districtName)}&dong=${encodeURIComponent(neighborhoodName)}`;
+  return `${createDistrictUrl(regionName, districtName)}${toPathSegment(neighborhoodName)}/`;
 }

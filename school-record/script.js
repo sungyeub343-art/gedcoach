@@ -2,7 +2,7 @@ const regionGrid = document.getElementById('regionGrid');
 const regionSearch = document.getElementById('regionSearch');
 
 function createRecordDistrictUrl(regionName, districtName) {
-  return `detail.html?region=${encodeURIComponent(regionName)}&district=${encodeURIComponent(districtName)}`;
+  return createDistrictUrl(regionName, districtName);
 }
 
 function renderRegions(keyword = '') {

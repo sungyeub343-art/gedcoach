@@ -2,15 +2,12 @@ import json
 import urllib.request
 from collections import defaultdict
 from pathlib import Path
-from urllib.parse import urlencode
 
 
 SOURCE_VERSION = "20260401"
 SOURCE_URL = f"https://raw.githubusercontent.com/vuski/admdongkor/master/ver{SOURCE_VERSION}/HangJeongDong_ver{SOURCE_VERSION}.geojson"
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = ROOT / "cities" / "neighborhoods.js"
-SITEMAP_PATH = ROOT / "sitemap.xml"
-SITE_URL = "https://gedcoach.kr"
 
 REGION_DISTRICTS = {
     "서울특별시": ["종로구", "중구", "용산구", "성동구", "광진구", "동대문구", "중랑구", "성북구", "강북구", "도봉구", "노원구", "은평구", "서대문구", "마포구", "양천구", "강서구", "구로구", "금천구", "영등포구", "동작구", "관악구", "서초구", "강남구", "송파구", "강동구"],
@@ -82,40 +79,8 @@ def main():
     lines.extend(["};", ""])
     OUTPUT_PATH.write_text("\n".join(lines), encoding="utf-8")
 
-    urls = [f"{SITE_URL}/", f"{SITE_URL}/cities/"]
-    for region, districts in REGION_DISTRICTS.items():
-        for district in districts:
-            query = urlencode({"region": region, "district": district})
-            urls.append(f"{SITE_URL}/cities/detail.html?{query}")
-            for neighborhood in neighborhoods[f"{region}|{district}"]:
-                query = urlencode({"region": region, "district": district, "dong": neighborhood})
-                urls.append(f"{SITE_URL}/cities/detail.html?{query}")
-    urls.append(f"{SITE_URL}/csat/")
-    for region, districts in REGION_DISTRICTS.items():
-        for district in districts:
-            query = urlencode({"region": region, "district": district})
-            urls.append(f"{SITE_URL}/csat/detail.html?{query}")
-            for neighborhood in neighborhoods[f"{region}|{district}"]:
-                query = urlencode({"region": region, "district": district, "dong": neighborhood})
-                urls.append(f"{SITE_URL}/csat/detail.html?{query}")
-    urls.append(f"{SITE_URL}/school-record/")
-    for region, districts in REGION_DISTRICTS.items():
-        for district in districts:
-            query = urlencode({"region": region, "district": district})
-            urls.append(f"{SITE_URL}/school-record/detail.html?{query}")
-            for neighborhood in neighborhoods[f"{region}|{district}"]:
-                query = urlencode({"region": region, "district": district, "dong": neighborhood})
-                urls.append(f"{SITE_URL}/school-record/detail.html?{query}")
-    sitemap_lines = [
-        '<?xml version="1.0" encoding="UTF-8"?>',
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    ]
-    for url in urls:
-        sitemap_lines.extend(["  <url>", f"    <loc>{url.replace('&', '&amp;')}</loc>", "  </url>"])
-    sitemap_lines.extend(["</urlset>", ""])
-    SITEMAP_PATH.write_text("\n".join(sitemap_lines), encoding="utf-8")
     print(f"Generated {len(neighborhoods)} districts and {sum(map(len, neighborhoods.values()))} neighborhoods")
-    print(f"Generated {len(urls)} sitemap URLs")
+    print("Run `node tools/build-pages.js` to regenerate the static pages and sitemaps")
 
 
 if __name__ == "__main__":
