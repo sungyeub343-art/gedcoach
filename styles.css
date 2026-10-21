@@ -850,7 +850,7 @@ textarea {
 
 .cta-wrap {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 1fr auto;
   gap: 36px;
   align-items: center;
 }
@@ -869,55 +869,6 @@ textarea {
 .cta-copy p {
   margin: 0;
   color: rgba(255, 255, 255, 0.8);
-}
-
-.consult-form {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 26px;
-  padding: 28px;
-  backdrop-filter: blur(5px);
-}
-
-.field-row {
-  display: grid;
-  gap: 18px;
-}
-
-.two-col {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-label {
-  display: grid;
-  gap: 8px;
-  margin-bottom: 18px;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 0.95rem;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.94);
-  color: var(--text);
-  border: 1px solid rgba(17, 35, 74, 0.06);
-  border-radius: 14px;
-  padding: 0.9rem 1rem;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 2px solid rgba(255, 159, 67, 0.4);
-  border-color: rgba(255, 159, 67, 0.5);
-}
-
-.submit-btn {
-  width: 100%;
-  border: none;
-  cursor: pointer;
 }
 
 .faq-list {
@@ -1150,7 +1101,6 @@ textarea:focus {
     font-size: 1rem;
   }
 
-  .two-col,
   .trust-grid,
   .prep-grid {
     grid-template-columns: 1fr;
