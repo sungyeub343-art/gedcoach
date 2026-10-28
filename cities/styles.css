@@ -69,6 +69,22 @@
 .local-faq-item { border: 1px solid var(--city-line); border-radius: 12px; background: white; }
 .local-faq-item summary { padding: 18px 20px; font-weight: 800; cursor: pointer; }
 .local-faq-item p { margin: 0; padding: 0 20px 18px; color: var(--city-muted); line-height: 1.75; }
+.info-article { max-width: 860px; }
+.info-article h2 { margin: 48px 0 16px; font-size: clamp(1.5rem, 2.6vw, 2rem); letter-spacing: -0.05em; }
+.info-article h2:first-child { margin-top: 0; }
+.info-article p, .info-article li { color: #3b4a63; line-height: 1.85; }
+.info-article ul, .info-article ol { padding-left: 22px; }
+.info-article a { color: var(--city-blue); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.info-table-wrap { overflow-x: auto; margin: 18px 0; }
+.info-table { width: 100%; min-width: 520px; border-collapse: collapse; background: white; border: 1px solid var(--city-line); border-radius: 12px; overflow: hidden; }
+.info-table th, .info-table td { padding: 14px 16px; border-bottom: 1px solid var(--city-line); text-align: left; line-height: 1.6; }
+.info-table thead th { background: var(--city-sky); color: var(--city-blue-dark); font-size: .92rem; }
+.info-table tbody th { white-space: nowrap; color: var(--city-ink); }
+.info-notice { margin: 36px 0 0; padding: 16px 18px; border-left: 4px solid var(--city-orange); border-radius: 8px; background: #fff8eb; color: #7a5a14 !important; font-size: .95rem; }
+.info-hub-card { display: grid; gap: 10px; color: inherit; }
+.info-hub-card h3 { margin: 0; font-size: 1.2rem; }
+.info-hub-card p { margin: 0; color: var(--city-muted); line-height: 1.7; font-size: .95rem; }
+.info-hub-card span { color: var(--city-blue); font-weight: 800; }
 .keyword-empty { margin: 0 0 16px; color: var(--city-muted); }
 .city-search { width: min(430px, 100%); margin-left: auto; padding: 13px 16px; border: 1px solid var(--city-line); border-radius: 10px; background: white; color: var(--city-ink); }
 .city-search:focus { outline: 3px solid #dce8ff; border-color: var(--city-blue); }

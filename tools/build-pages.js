@@ -81,8 +81,9 @@ function writeSitemap(file, urls) {
   fs.writeFileSync(path.join(ROOT, file), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`);
 }
 
-const sitemapFiles = ['sitemap-main.xml'];
+const sitemapFiles = ['sitemap-main.xml', 'sitemap-info.xml'];
 writeSitemap('sitemap-main.xml', [`${SITE_URL}/`, `${SITE_URL}/cities/`, `${SITE_URL}/csat/`, `${SITE_URL}/school-record/`]);
+// sitemap-info.xml is written by tools/build-info-pages.js.
 
 for (const service of Object.keys(SERVICES)) {
   const renderer = createRenderer(service);

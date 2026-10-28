@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <sitemap><loc>https://gedcoach.kr/sitemap-main.xml</loc><lastmod>2026-10-21</lastmod></sitemap>
-  <sitemap><loc>https://gedcoach.kr/sitemap-cities.xml</loc><lastmod>2026-10-21</lastmod></sitemap>
-  <sitemap><loc>https://gedcoach.kr/sitemap-csat.xml</loc><lastmod>2026-10-21</lastmod></sitemap>
-  <sitemap><loc>https://gedcoach.kr/sitemap-school-record.xml</loc><lastmod>2026-10-21</lastmod></sitemap>
+  <sitemap><loc>https://gedcoach.kr/sitemap-main.xml</loc><lastmod>2026-10-28</lastmod></sitemap>
+  <sitemap><loc>https://gedcoach.kr/sitemap-info.xml</loc><lastmod>2026-10-28</lastmod></sitemap>
+  <sitemap><loc>https://gedcoach.kr/sitemap-cities.xml</loc><lastmod>2026-10-28</lastmod></sitemap>
+  <sitemap><loc>https://gedcoach.kr/sitemap-csat.xml</loc><lastmod>2026-10-28</lastmod></sitemap>
+  <sitemap><loc>https://gedcoach.kr/sitemap-school-record.xml</loc><lastmod>2026-10-28</lastmod></sitemap>
 </sitemapindex>
