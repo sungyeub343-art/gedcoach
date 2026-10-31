@@ -51,6 +51,16 @@ const LOCAL_SERVICES = {
   }
 };
 
+// Long guide infographics are split into slices so only the first one loads up front.
+const GUIDE_IMAGES = {
+  'ged-guide': [1415, 1415, 1415, 1415, 1415, 1415, 1410],
+  'tutoring-guide': [1463, 1463, 1463, 1463, 1463, 1463, 1463, 1459]
+};
+
+function renderGuideImage(key, alt) {
+  return GUIDE_IMAGES[key].map((height, index) => `<img class="city-guide-image" src="../images/${key}-${index + 1}.webp" alt="${index === 0 ? alt : ''}" width="900" height="${height}"${index === 0 ? '' : ' loading="lazy"'} decoding="async" />`).join('');
+}
+
 function getRegionShortName(regionName) {
   return REGION_SHORT_NAMES[regionName] || regionName;
 }

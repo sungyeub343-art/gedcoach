@@ -6,7 +6,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SITE_URL = 'https://gedcoach.kr';
 const PHONE = '010-2928-3614';
-const OG_IMAGE = `${SITE_URL}/${encodeURI('[복사본] 검정고시_이미지.jpg')}`;
+const OG_IMAGE = `${SITE_URL}/images/ged-guide-og.jpg`;
 const NOTICE = '<p class="info-notice">시험 일정·과목·응시 자격은 매년 교육부와 시·도교육청 공고에 따라 달라질 수 있습니다. 접수 전 거주 지역 교육청의 최신 공고를 꼭 확인하세요.</p>';
 
 const pages = [
@@ -231,4 +231,26 @@ for (const page of pages) {
 const lastmod = new Date().toISOString().slice(0, 10);
 const urls = [pageUrl(''), ...pages.map((page) => pageUrl(page.slug))];
 fs.writeFileSync(path.join(ROOT, 'sitemap-info.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((url) => `  <url><loc>${url}</loc><lastmod>${lastmod}</lastmod></url>`).join('\n')}\n</urlset>\n`);
+
+// RSS feed for Naver Search Advisor (웹 페이지 수집 > RSS 제출).
+const feedItems = [
+  [hub.title, pageUrl(''), hub.description],
+  ...pages.map((page) => [page.title, pageUrl(page.slug), page.description]),
+  ['지역별 검정고시 과외 | 전국 시군구·동네 1:1 방문·화상 수업', `${SITE_URL}/cities/`, '전국 시군구·동네별 고졸·중졸 검정고시 1:1 방문·화상 과외 안내'],
+  ['내신 과외 | 중고등 국영수 1:1 방문·화상 내신 대비', `${SITE_URL}/school-record/`, '학교별 시험 범위에 맞춘 중학생·고등학생 1:1 내신 과외 안내'],
+  ['수능 과외 | 정시 대비 국영수탐 1:1 방문·화상', `${SITE_URL}/csat/`, '고3·재수생·검정고시 출신 수험생을 위한 1:1 수능·정시 대비 과외 안내']
+];
+const pubDate = new Date().toUTCString();
+fs.writeFileSync(path.join(ROOT, 'rss.xml'), `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>검정고시 · 검정고시 과외와 시험 정보</title>
+    <link>${SITE_URL}/</link>
+    <description>검정고시 시험 일정, 합격 점수, 과목 정보와 지역별 검정고시·내신·수능 과외 안내</description>
+    <language>ko</language>
+    <lastBuildDate>${pubDate}</lastBuildDate>
+${feedItems.map(([title, link, description]) => `    <item><title>${escapeAttribute(title)}</title><link>${link}</link><guid>${link}</guid><description>${escapeAttribute(description)}</description><pubDate>${pubDate}</pubDate></item>`).join('\n')}
+  </channel>
+</rss>
+`);
 console.log(`info: ${urls.length} pages`);

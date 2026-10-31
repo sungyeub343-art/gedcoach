@@ -8,9 +8,9 @@ const vm = require('vm');
 const ROOT = path.resolve(__dirname, '..');
 const SITE_URL = 'https://gedcoach.kr';
 const SERVICES = {
-  cities: { ogImage: `${SITE_URL}/${encodeURI('[복사본] 검정고시_이미지.jpg')}`, linkSuffix: '' },
-  csat: { ogImage: `${SITE_URL}/${encodeURI('[복사본] 과외랜딩페이지.jpg')}`, linkSuffix: ' 수능 과외' },
-  'school-record': { ogImage: `${SITE_URL}/${encodeURI('[복사본] 과외랜딩페이지.jpg')}`, linkSuffix: ' 내신 과외' }
+  cities: { ogImage: `${SITE_URL}/images/ged-guide-og.jpg`, linkSuffix: '' },
+  csat: { ogImage: `${SITE_URL}/images/tutoring-guide-og.jpg`, linkSuffix: ' 수능 과외' },
+  'school-record': { ogImage: `${SITE_URL}/images/tutoring-guide-og.jpg`, linkSuffix: ' 내신 과외' }
 };
 const LASTMOD = new Date().toISOString().slice(0, 10);
 
